@@ -1,8 +1,8 @@
 {
-  "name": "simple-electron-react",
-  "productName": "React Electron App",
+  "name": "project-manager-desktop-app",
+  "productName": "Project Manager",
   "version": "1.0.0",
-  "description": "Simple boilerplate for building Electron apps with React",
+  "description": "",
   "license": "MIT",
   "engines": {
     "node": ">=9.0.0",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

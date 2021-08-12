@@ -1,0 +1,51 @@
+.project-cards-container {
+  display: flex;
+  margin-top: 2.6rem;
+  margin-bottom: 3.5rem;
+  margin-left: 1.2rem;
+}
+
+.project-card-main {
+  margin-right: 2.6rem;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-card {
+  background-color: #ff5e5e;
+  width: 133px;
+  height: 133px;
+  border-radius: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-project-card {
+  background-color: transparent;
+  border: 2px dashed #8d8d8d;
+}
+.projects-list {
+  margin-top: 1rem;
+  margin-left: 2.2rem;
+  margin-bottom: 5rem;
+}
+.projects-list-item {
+  display: flex;
+
+  margin-bottom: 0.85rem;
+}
+.projects-list-item span {
+  width: 20rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.list-tags {
+  color: rgb(156, 156, 156);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.list-tags span {
+  font-size: 1.1rem;
+}
