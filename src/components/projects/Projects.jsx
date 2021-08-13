@@ -10,10 +10,9 @@ const Projects = () => {
   var db = new PouchDB("projects");
 
   useEffect(() => {
-    
     db.allDocs({ include_docs: true, attachments: true }).then((allDocs) => {
       setProjects(allDocs.rows);
-      console.log(allDocs.rows)
+      // console.log(allDocs.rows);
     });
   }, [pinnedProjects]);
   return (
@@ -37,12 +36,14 @@ const Projects = () => {
         {projects.map((project) => {
           if (!project.doc.pinned) return null;
           return (
-            <ProjectCard
-              key={project.id}
-              background={project.doc.thumbnail.background}
-              emoji={project.doc.thumbnail.emoji}
-              name={project.doc.name}
-            />
+            <Link key={project.id} to={`/project/${project.id}`}>
+              <ProjectCard
+                
+                background={project.doc.thumbnail.background}
+                emoji={project.doc.thumbnail.emoji}
+                name={project.doc.name}
+              />
+            </Link>
           );
         })}
       </div>
@@ -62,13 +63,11 @@ const Projects = () => {
               key={project.id}
               id={project.id}
               db={db}
-              pinnedProjects={pinnedProjects}
               name={project.doc.name}
               lmdate={project.doc.lmdate}
               status={project.doc.status}
               setPinnedProjects={setPinnedProjects}
               pinned={project.doc.pinned}
-              setPinnedProjects={setPinnedProjects}
             />
           );
         })}
@@ -83,13 +82,11 @@ const Projects = () => {
           <span>Last Modified</span>
         </div>
         {projects.map((project) => {
-          
           return (
             <ProjectListItem
               key={project.id}
               id={project.id}
               db={db}
-              setPinnedProjects={setPinnedProjects}
               name={project.doc.name}
               lmdate={project.doc.lmdate}
               status={project.doc.status}

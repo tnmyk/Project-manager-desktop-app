@@ -4,7 +4,7 @@
   margin-bottom: 3.5rem;
   margin-left: 1.2rem;
 }
-.project-cards-container .project-card-main {
+.project-cards-container a{
   margin-right: 2.6rem;
 }
 .project-card-main {
@@ -38,9 +38,12 @@
   margin-bottom: 0.85rem;
 }
 .projects-list-item span {
-  width: 20rem;
+  width: 17rem;
   font-size: 1rem;
   font-weight: 500;
+}
+.projects-list-item-details{
+  /* background-color: red; */
 }
 .list-tags {
   color: rgb(156, 156, 156);

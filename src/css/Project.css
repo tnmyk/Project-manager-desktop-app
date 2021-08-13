@@ -1,0 +1,164 @@
+.project-banner {
+  width: 100%;
+  background-color: crimson;
+  height: 12rem;
+  position: relative;
+  margin-bottom: 3rem;
+}
+.project-main {
+  padding: 1.5rem 2rem;
+}
+.project-name {
+  font-size: 3rem;
+  margin-top: 0.8rem;
+  margin-left: 1.5rem;
+  color: white;
+}
+.project-subheading {
+  font-weight: 400;
+  color: rgb(168, 168, 168);
+}
+.project-tools-container {
+  margin: 2rem 0rem;
+  padding: 0 1rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  /* background: red; */
+  justify-content: space-around;
+}
+.project-tool {
+  background-color: rgb(255, 56, 95);
+  flex: 1;
+  margin: 1rem;
+  height: 8rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.project-nav {
+  width: calc(100% - 12rem);
+  height: 3rem;
+  background: #2a2c31;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+.project-nav-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.project-nav-icon {
+  margin-right: 0.4rem;
+  font-size: 1rem;
+}
+
+/* todo */
+.checkbox {
+  --background: #fff;
+  --border: #d1d6ee;
+  --border-hover: #bbc1e1;
+  --border-active: #1e2235;
+  --tick: #fff;
+  position: relative;
+  
+}
+.checkbox input,
+.checkbox svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+.checkbox input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  outline: none;
+  background: var(--background);
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: box-shadow 0.3s;
+  box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+  margin-right: 1rem;
+
+}
+.checkbox input:hover {
+  --s: 2px;
+  --b: var(--border-hover);
+}
+.checkbox input:checked {
+  --b: var(--border-active);
+}
+.checkbox svg {
+  pointer-events: none;
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--stroke, var(--border-active));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 21px;
+  height: 21px;
+  transform: scale(var(--scale, 1)) translateZ(0);
+}
+.checkbox.path input:checked {
+  --s: 2px;
+  transition-delay: 0.4s;
+}
+.checkbox.path input:checked + svg {
+  --a: 16.1 86.12;
+  --o: 102.22;
+}
+.checkbox.path svg {
+  stroke-dasharray: var(--a, 86.12);
+  stroke-dashoffset: var(--o, 86.12);
+  transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s;
+}
+.checkbox.bounce {
+  --stroke: var(--tick);
+}
+.checkbox.bounce input:checked {
+  --s: 11px;
+}
+.checkbox.bounce input:checked + svg {
+  animation: bounce 0.4s linear forwards 0.2s;
+}
+.checkbox.bounce svg {
+  --scale: 0;
+}
+@keyframes bounce {
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+.todo-item{
+  display: flex;
+  margin: 0.5rem;
+}
+/* *:before,
+*:after {
+  box-sizing: inherit;
+} */
