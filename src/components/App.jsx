@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "./Nav.jsx";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Projects from "./projects/Projects.jsx";
 import CreateProject from "./projects/CreateProject.jsx";
+import PouchDB from "pouchdb";
 const App = () => {
+  
   return (
     <Router>
       <div className="app">

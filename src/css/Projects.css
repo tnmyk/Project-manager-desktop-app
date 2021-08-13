@@ -1,12 +1,13 @@
 .project-cards-container {
   display: flex;
-  margin-top: 2.6rem;
+  margin-top: 2.1rem;
   margin-bottom: 3.5rem;
   margin-left: 1.2rem;
 }
-
-.project-card-main {
+.project-cards-container .project-card-main {
   margin-right: 2.6rem;
+}
+.project-card-main {
   width: max-content;
   display: flex;
   flex-direction: column;

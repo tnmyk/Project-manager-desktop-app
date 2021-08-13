@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard.jsx";
 import "../../css/Projects.css";
 import ProjectListItem from "./ProjectListItem.jsx";
-import {Link} from 'react-router-dom'
-
+import { Link } from "react-router-dom";
+import PouchDB from "pouchdb";
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [pinnedProjects, setPinnedProjects] = useState([]);
+  var db = new PouchDB("projects");
+
+  useEffect(() => {
+    
+    db.allDocs({ include_docs: true, attachments: true }).then((allDocs) => {
+      setProjects(allDocs.rows);
+      console.log(allDocs.rows)
+    });
+  }, [pinnedProjects]);
   return (
     <main>
       <h1 className="h1">Projects</h1>
       <div className="project-cards-container">
-        {" "}
-        <Link to='/create-project'>
+        <Link to="/create-project">
           <div className="project-card-main">
             <div className="project-card create-project-card">+</div>
             <div
@@ -24,10 +34,17 @@ const Projects = () => {
             </div>
           </div>
         </Link>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {projects.map((project) => {
+          if (!project.doc.pinned) return null;
+          return (
+            <ProjectCard
+              key={project.id}
+              background={project.doc.thumbnail.background}
+              emoji={project.doc.thumbnail.emoji}
+              name={project.doc.name}
+            />
+          );
+        })}
       </div>
       <h2 className="heading" style={{ fontSize: "1.3rem" }}>
         📌 Pinned Projects
@@ -38,11 +55,23 @@ const Projects = () => {
           <span>Status</span>
           <span>Last Modified</span>
         </div>
-        <ProjectListItem />
-        <ProjectListItem />
-        <ProjectListItem />
-        <ProjectListItem />
-        <ProjectListItem />
+        {projects.map((project) => {
+          if (!project.doc.pinned) return null;
+          return (
+            <ProjectListItem
+              key={project.id}
+              id={project.id}
+              db={db}
+              pinnedProjects={pinnedProjects}
+              name={project.doc.name}
+              lmdate={project.doc.lmdate}
+              status={project.doc.status}
+              setPinnedProjects={setPinnedProjects}
+              pinned={project.doc.pinned}
+              setPinnedProjects={setPinnedProjects}
+            />
+          );
+        })}
       </div>
       <h2 className="heading" style={{ fontSize: "1.3rem" }}>
         📌All Projects
@@ -53,11 +82,22 @@ const Projects = () => {
           <span>Status</span>
           <span>Last Modified</span>
         </div>
-        <ProjectListItem />
-        <ProjectListItem />
-        <ProjectListItem />
-        <ProjectListItem />
-        <ProjectListItem />
+        {projects.map((project) => {
+          
+          return (
+            <ProjectListItem
+              key={project.id}
+              id={project.id}
+              db={db}
+              setPinnedProjects={setPinnedProjects}
+              name={project.doc.name}
+              lmdate={project.doc.lmdate}
+              status={project.doc.status}
+              pinned={project.doc.pinned}
+              setPinnedProjects={setPinnedProjects}
+            />
+          );
+        })}
       </div>
     </main>
   );
