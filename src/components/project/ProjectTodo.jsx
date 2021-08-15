@@ -9,7 +9,7 @@ import {
 import { arrayMoveMutable } from "array-move";
 import { GrDrag } from "react-icons/gr";
 
-const ProjectTodo = ({ id }) => {
+const ProjectTodo = ({ id,projectName }) => {
   const [todos, setTodos] = useState([]);
   const [inputTodo, setInputTodo] = useState("");
   const [update, setUpdate] = useState();
@@ -17,7 +17,7 @@ const ProjectTodo = ({ id }) => {
   const [numbers, setNumbers] = useState({ completed: 0, uncompleted: 0 });
   // sort
   const DragHandle = sortableHandle(() => (
-    <GrDrag style={{ height: "100%", cursor: "move" }} />
+    <GrDrag style={{ height: "100%", cursor: "grab" }} />
   ));
   const onSortEnd = ({ oldIndex, newIndex }) => {
     var arr = todos;
@@ -134,7 +134,7 @@ const ProjectTodo = ({ id }) => {
   }, [update, loading]);
   return (
     <div className="project-main">
-      <h1 style={{marginBottom:'0.5rem'}}>Todo</h1>
+      <h1 style={{marginBottom:'0.5rem'}}>Todo for {projectName}</h1>
       <input
         type="text"
         placeholder="Todo"

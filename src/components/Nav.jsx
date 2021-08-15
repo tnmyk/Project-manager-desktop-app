@@ -5,8 +5,12 @@ import {AiOutlineProject} from 'react-icons/ai'
 import {HiOutlineFlag} from 'react-icons/hi'
 const Nav = () => {
     return (
-      <nav>
-        <h4 className="logo">Proma</h4>
+      <nav style={{ background: "white", color: "black", width: "10rem" }}>
+        <Link to="projects" style={{ marginTop: "1rem" }}>
+          <BiHomeAlt className="nav-icon" />
+          Home
+        </Link>
+        {/* <h4 className="logo">Proma</h4>
         <div className="nav-items">
           <Link to="/">
             <BiHomeAlt className="nav-icon" /> Dashboard
@@ -23,7 +27,7 @@ const Nav = () => {
             <BiBulb className="nav-icon" />
             Ideas
           </Link>
-        </div>
+        </div> */}
       </nav>
     );
 }

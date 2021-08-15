@@ -47,13 +47,13 @@ const Project = () => {
           </div>
           <Switch>
             <Route path="/project/:id/todo">
-              <ProjectTodo id={id} />
+              <ProjectTodo projectName={projectData.name} id={id} />
             </Route>
             <Route path="/project/:id/notes">
               <ProjectNotes id={id} />
             </Route>
             <Route path="/project/:id/ideas">
-              <ProjectIdeas id={id} />
+              <ProjectIdeas projectName={projectData.name} id={id} />
             </Route>
             <Route exact path="/project/:id">
               <ProjectMain projectData={projectData} id={id} />
@@ -67,9 +67,9 @@ const Project = () => {
               <FiCheckCircle className="project-nav-icon" />
               Todo
             </Link>
-            <Link to={`/project/${id}/notes`} className="project-nav-link">
+            {/* <Link to={`/project/${id}/notes`} className="project-nav-link">
               <FiBook className="project-nav-icon" /> Notes
-            </Link>
+            </Link> */}
 
             <Link to={`/project/${id}/ideas`} className="project-nav-link">
               <FiStar className="project-nav-icon" />

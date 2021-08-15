@@ -40,7 +40,8 @@
   color: white;
 }
 .project-nav {
-  width: calc(100% - 12rem);
+  /* width: calc(100% - 12rem); */
+  width: 100%;
   height: 3rem;
   background: #2a2c31;
   position: absolute;
@@ -180,4 +181,14 @@ html {
 .noitems  {
   margin-top: 1rem;
   margin-left: 1rem;
+}
+
+.ideaname::first-letter,.todoname::first-letter{
+  
+ text-transform: capitalize;
+}
+.ideaname{
+  margin-left: 0.7rem;
+  font-size: 1.4rem;
+  font-weight: 500;
 }

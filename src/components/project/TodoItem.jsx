@@ -1,5 +1,5 @@
 import React from "react";
-import {BiTrash} from 'react-icons/bi'
+import { BiTrash } from "react-icons/bi";
 const TodoItem = ({ name, done, handleCheckClick, id, handleTodoDelete }) => {
   return (
     <div className="todo-item">
@@ -29,6 +29,7 @@ const TodoItem = ({ name, done, handleCheckClick, id, handleTodoDelete }) => {
         )}
       </div>
       <span
+        className="todoname"
         style={done ? { textDecoration: "line-through", color: "gray" } : {}}
       >
         {name}

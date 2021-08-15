@@ -112,7 +112,7 @@ const CreateProject = () => {
           value={projectData.description}
           onChange={handleProjectDataChange}
         ></textarea>
-        <div
+        {/* <div
           style={{ display: "flex", alignItems: "center", marginTop: "1rem" }}
         >
           <div className="input-label" style={{ width: "max-content" }}>
@@ -133,9 +133,9 @@ const CreateProject = () => {
               Create new Category
             </span>
           </div>
-        </div>
+        </div> */}
         <button
-          style={{ marginTop: "5rem" }}
+          style={{ marginTop: "0rem" }}
           onClick={handleSave}
           className="bn632-hover bn27"
         >

@@ -33,12 +33,11 @@ const Projects = () => {
             </div>
           </div>
         </Link>
-        {projects.map((project) => {
-          if (!project.doc.pinned) return null;
+        {projects.map((project,index) => {
+          if (!project.doc.pinned || index>3) return null;
           return (
             <Link key={project.id} to={`/project/${project.id}`}>
               <ProjectCard
-                
                 background={project.doc.thumbnail.background}
                 emoji={project.doc.thumbnail.emoji}
                 name={project.doc.name}
